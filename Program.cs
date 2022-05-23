@@ -70,7 +70,6 @@ public static class ProductRepository
     {
         Products.Remove(product);
     }
-
 }
 
 public class Product
@@ -78,6 +77,7 @@ public class Product
     public int Id { get; set; }
     public string? Code { get; set; }
     public string? Name { get; set; }
+    public string Description { get; set; }
 }
 
 public class ApplicationDbContext : DbContext
@@ -86,7 +86,7 @@ public class ApplicationDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder options)
     => options.UseSqlServer(
-        "Server=localhost;Database=Products;User Id=sa;Password=@sql2019;MiltipleActiveResultsSets=true;Encrypt=YES;TrustServerCertificate=YES");
+        "Server=localhost;Database=Products;User Id=sa;Password=@sql2019;MultipleActiveResultSets=true;Encrypt=YES;TrustServerCertificate=YES");
 }
 
 
