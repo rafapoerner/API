@@ -77,6 +77,12 @@ public class Category {
     public string? Name { get; set; }
 }
 
+public class Tag {
+    public int Id { get; set; }
+    public string? Name { get; set; }
+    public int ProductId { get; set; }
+}
+
 public class Product
 {
     public int Id { get; set; }
@@ -85,6 +91,7 @@ public class Product
     public string? Description { get; set; }
     public int CategoryId { get; set; } //Há discordâncias aqui
     public Category Category { get; set; }
+    public List<Tag> Tags { get; set; }
 }
 
 public class ApplicationDbContext : DbContext
